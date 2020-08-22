@@ -1,4 +1,4 @@
-import { YamlLoader } from "./../mod.ts";
+import { YamlLoader } from "https://deno.land/x/yaml_loader/mod.ts";
 
 const yamlLoader = new YamlLoader();
 
