@@ -1,4 +1,4 @@
-import { load } from "https://deno.land/x/js_yaml_port/js-yaml.js";
+import { load } from "https://deno.land/x/js_yaml_port@3.14.0/js-yaml.js";
 
 /**
  * The class used for parsing yaml files.
