@@ -1,7 +1,11 @@
-import { YamlLoader } from "https://deno.land/x/yaml_loader/mod.ts";
+import { YamlLoader } from "../mod.ts";
 
 const yamlLoader = new YamlLoader();
 
 const yamlFileData = await yamlLoader.parseYamlFile("./test1.yaml");
 
-console.log(yamlFileData.items);
+if (yamlFileData.items[2] == 3) {
+  console.log("✅ Test 1 Passed");
+} else {
+  console.error("Test 1 Failed");
+}
