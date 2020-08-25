@@ -1,4 +1,6 @@
-import { load } from "https://deno.land/x/js_yaml_port@3.14.0/js-yaml.js";
+// Copyright 2020-present Carter Snook. All rights reserved. MIT license.
+
+import { parse as parseYaml } from "https://deno.land/std@0.63.0/encoding/yaml.ts";
 
 /**
  * The class used for parsing yaml files.
@@ -18,7 +20,7 @@ export class YamlLoader {
    * @async
    * @param filePath Location of the yaml file that is to be parsed.
    */
-  async parseYamlFile(filePath: string) {
+  async parseFile(filePath: string) {
     /** Loading the file. */
     const yamlFile = await Deno.readFile(filePath);
 
@@ -26,6 +28,6 @@ export class YamlLoader {
     const yamlText = this.decoder.decode(yamlFile);
 
     /** Returning parsed yaml as an object. */
-    return await load(yamlText);
+    return await parseYaml(yamlText);
   }
 }
